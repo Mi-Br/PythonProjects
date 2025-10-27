@@ -1,28 +1,29 @@
-from turtle import Turtle, Screen
+from turtle import Turtle, Screen, color
 
 SCREEN_WIDTH = 1000
 SCREEN_HEIGHT = 1000
 CELL_WIDTH = 10
 CELL_HEIGHT = 10
 BG_COLOUR = 'black'
+SN_COLOR = 'white'
+FD_COLOR =  'green'
 
-
-s = Screen()
-s.setup(SCREEN_WIDTH, SCREEN_HEIGHT, 'BG_COLOUR')
-
-
-s.bgcolor('black') 
-s.screensize(100, 100, 'yellow')
-
-t = Turtle()
-s.exitonclick()
-
+class Snake(Turtle):
+    def __init__(self):
+        super().__init__()
+        self.penup()
+        self.fillcolor(SN_COLOR)
+        self.shape('square')
 
 def main():
-    print("Hello, World!")
 
-    t = Turtle()
-    t.forward(10)
+    screen = Screen()
+    screen.setup(SCREEN_WIDTH, SCREEN_HEIGHT)
+    screen.bgcolor(BG_COLOUR) 
+
+    snake = Snake()
+    snake.forward(100)
+    screen.exitonclick()
 
 if __name__ == "__main__":
     main()
